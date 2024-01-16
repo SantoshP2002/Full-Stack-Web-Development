@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* General sibling selector */
+.ankush ~ h1{
+    color: blue
+}
+
+/* Adjacent sibling selector */
+.ankush + h1{
+    background-color: yellow;
+}
+</style>
+<body>
+    <div class="heading">
+        <h1 class="ankush">I am heading 1</h1>
+        <h1>I am heading 2</h1>
+        <h1>I am heading 3</h1>
+        <h1>I am heading 4</h1>
+        <h1 >I am heading 5</h1>
+        <h1>I am heading 6</h1>
+        <h1>I am heading 7</h1>
+        <p> I am para</p>
+        <div>
+            <h1>I am heading 8</h1>
+            <h1>I am heading 9</h1>
+        </div>
+    </div>
+</body>
+</html>

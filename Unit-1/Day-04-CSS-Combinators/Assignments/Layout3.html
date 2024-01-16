@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+
+        .parent {
+            border: 1px solid red;
+            text-align: center;
+            padding-left: 30px;
+            
+        }
+
+        .child {
+            /* border: 1px solid black; */
+            display: flex;
+            /* justify-content: space-around; */
+            width: 50%;
+            padding-left: 150px;    
+        }
+
+        .sub-child {
+            /* border: 1px solid blue;   */
+             
+              
+        }
+
+        .sub-child > img {
+            width: 100%;
+            background-color: blue;
+            height: 150px;
+        }
+        #topic{
+            text-align: left;
+        }
+        #sub-topic{
+            text-align: left;
+        }
+        #image{
+            height: 150px;
+            
+        }
+        .color{
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+        }
+        .font{
+            font-size: 10px;
+        }
+    </style>
+</head>
+.
+<body>
+    <div class="parent">
+        <h2>Our Courses</h2>
+        <p>Practice-Based Learning Tracks,<span>Supercharged By A.I.</span></p>
+        <div class="child">
+            <div class="sub-child">
+                <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/full_stack1_329d6b5595.png" alt="">
+                <div id="topic">
+                    <h3>Software Development</h3>
+                    <p  class="font">Become job-ready in 30-35 weeks</p>
+                </div>
+                <hr>
+                <p class="font">Opportunities: Full Stack Developer, Software Engineer & much more.</p>
+                <p class="font">100% live learning with expert instructors.<img src=""></p>
+                <p class="font">Pay After Placement<img src=""></p>
+                <button class="color">VIEW DETAILS</button>
+
+            </div>
+            <div class="sub-child">
+                <img id="image" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/backend_ea129d404e.png" alt="">
+                <div id="sub-topic">
+                    <h3>Data Analytics</h3>
+                    <p  class="font">Backend Development</p>
+                </div>
+                <hr>
+                <p  class="font">Become job-ready in 35 weeks</p>
+                <p  class="font">Opportunities: Backend Web Developer, API developer & much more.<img src=""></p>
+                <p  class="font">Pay After Placement<img src=""></p>
+                <button class="color">VIEW DETAILS</button>
+             </div>
+        </div>
+        <p>if you are currently in <strong>1st,2nd</strong> or <strong>pre-final</strong> year of collage,<a href=""></a></p>
+    </div>
+</body>
+
+</html>

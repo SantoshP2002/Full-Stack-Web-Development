@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .sub-child{
+            display: flex;
+            justify-content: space-around;
+        }
+        .sub-child > img{
+            width: 30%;
+        }
+        .child{
+            text-align: center;
+            margin-top: 10px;
+        }
+        .sub-child > div{
+            
+            width: 23%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 5px;
+        }
+        .image{
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .logo{
+            width: 140px;
+            height: 48px;
+        }
+        .name{
+          font-weight: 600;  
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="top-section" class="child">
+            <h2>Board Members</h2>
+            <div class="sub-child">
+                <img src="https://www.masaischool.com/images/our-investors/india-q-borderless.svg" alt="">
+
+                <img src="https://www.masaischool.com/images/our-investors/unitus-borderless.svg" alt="">
+
+                <img src="https://www.masaischool.com/images/our-investors/omidyar-borderless.svg" alt="">
+            </div>
+        </div>
+        
+        <div id="bottom-section" class="child">
+            <h2>Strategic Investors</h2>
+            <div class="sub-child">
+                <div>
+                    <img class="image" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="">
+                    <p class="name">Vijay Shekhar Sharma</p>
+                    <p>Founder & CEO</p>
+                    <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" alt="">
+                </div>
+
+                <div>
+                    <img class="image" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png" alt="">
+                    <p class="name">Kunal Shah</p>
+                    <p>Founder</p>
+                    <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png" alt="">
+                </div>
+
+                <div>
+                    <img class="image" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg" alt="">
+                    <p class="name">Amrish Ra</p>
+                    <p>CEO</p>
+                    <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png" alt="">
+                </div>
+
+                <div>
+                    <img class="image" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg" alt="">
+                    <p class="name">Sampad Swain</p>
+                    <p>Co-Founder & CEO</p>
+                    <img class="logo" src="https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
