@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            border: 1px solid red;
+            font-family: sans-serif;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+
+        #heading {
+
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 15px;
+            flex-basis: 75%;
+        }
+
+        #heading a {
+
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        #navbar h1 {
+            background-color: blue;
+            color: white;
+            /* height: 100%; */
+        }
+
+        /* #navbar div :nth-child(h1){
+            width:100%;
+            height: 50%;
+        } */
+        .child-left img {
+            width: 200px;
+            padding-bottom: 30px;
+
+        }
+
+        .child-left {
+            padding-left: 25px;
+            width: 50%;
+
+        }
+
+        .image {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .box img {
+            width: 50px;
+            padding-left: 10px;
+        }
+
+        .box {
+            width: 100%;
+            padding-left: 20px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 5px;
+
+        }
+
+        .child-right>div {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            margin: 40px;
+
+
+
+        }
+
+        .color {
+            color: blue;
+        }
+
+        .child-right {
+            width: 50%;
+            border: 1px solid red;
+
+        }
+
+        div {}
+
+        .child-right>div>div {
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="parent">
+        <div id="navbar">
+            <div>
+                <h1>StudyLab</h1>
+            </div>
+            <div id="heading">
+                <a href="#">Home</a>
+                <a href="#">about</a>
+                <a href="#">Instructor</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+
+        </div>
+        <div id="container">
+
+            <div class=" child-left">
+                <p class="color">WELCOME TO STUDYLAB</p>
+                <h1>We Are StudyLab An Online Learning Center</h1>
+                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                <div class="image">
+                    <img src="https://themewagon.github.io/studylab/images/about.jpg" alt="">
+                    <h4>Learn anything from StudyLabWatch video</h4>
+                </div>
+            </div>
+
+
+            <div class="child-right">
+                <div>
+                    <div class="box">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR5kkp-ie9syNnLVMOkCzKl4v-hsGm56uy5e_P2W9rQ0xJQK8Ei"
+                            alt="blue">
+                        <h4>Top Quality Content</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSnAAkvnI1yPdVrnVcAX7apMfjwTDhs9sGjOU11HipjrumKwzhR"
+                            alt="pink">
+                        <h4>Highly Skilled Instructor</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="box">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQmeQjfZfDBTWNnGwc4SiaWJMfHU4Ar1J7QAm2DcbYKHgzdy864"
+                            alt="">
+                        <h4>World Class & Quiz</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                    </div>
+                    <div class="box">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSmZoIqPfRy01TSnaWPQaYgdldiMUDHIhfjbx1vL3RadF_U-aaK"
+                            alt="">
+                        <h4>Get Certified</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+</body>
+
+</html>
