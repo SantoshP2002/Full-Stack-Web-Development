@@ -1,0 +1,118 @@
+/* Default Style */
+
+.nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#names-list {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(17, 85, 111);
+
+}
+
+.nav>button {
+    background-color: red;
+    color: white;
+    margin: 10px 0px;
+    border-radius: 5px;
+}
+
+.top {
+    background-color: rgb(59, 56, 56);
+    padding: 20px 40px;
+}
+
+.top>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.top div>img {
+    width: 20%;
+
+}
+
+.mid div>img {
+    width: 90%;
+}
+
+.mid div {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 10px 10px;
+    background-color: #fff;
+}
+
+.mid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: rgb(244, 236, 236);
+    /* margin-top: 40px;  */
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.mid>div h2,
+p {
+    margin: 8px auto;
+    padding: 0px 10px;
+}
+
+.bottom {
+    width: 90%;
+    margin: auto;
+}
+
+.bottom div>img {
+    width: 30%;
+}
+
+.bottom div {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    
+}
+
+/* Write all styles here  */
+@media only screen and (max-width: 800px) {
+
+    /* Medium Screen  */
+    .mid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .nav #names-list{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    /* Small Screen  */
+    .top>div {
+        flex-direction: column;
+    }
+
+    .top div>img {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .mid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .bottom > div {
+        flex-direction: column;
+    }
+    .bottom > div > img{
+        width: 100%;
+    }
+
+}
