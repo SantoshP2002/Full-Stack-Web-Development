@@ -21,21 +21,25 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 5px;
             width: 25%;
+            height: 250px;
             border: 1px solid purple;
-            padding-left: 200px;
+            padding: 20px;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 
         }
 
         #numbers input[type="text"] {
-            width: auto;
+            width: 95%;
             grid-column: span 4;
+            margin: auto;
         }
 
         #numbers>input {
-            width: 25px;
+            width: 100%;
             border: none;
-            height: 25px;
+            height: 100%;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             border-radius: 3px;
         }
@@ -53,8 +57,9 @@
 <body>
     <div id="container">
         <div id="heading">
-            <h1>Masai Calculator</h1>
+            <h2>Masai Calculator</h2>
         </div>
+        
         <div id="numbers">
             <input type="text" placeholder="">
             <input type="button" value="1">

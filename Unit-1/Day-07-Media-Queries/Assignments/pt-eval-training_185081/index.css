@@ -1,0 +1,87 @@
+      /* Write your styles here */
+      #header {
+            text-align: center;
+      }
+
+      #teachers {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+      }
+
+
+      #teachers div>p,
+      h3,
+      h6 {
+            text-align: center;
+            padding: 0px 10px;
+      }
+
+      .child-section {
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 90%;
+      }
+
+      .child-section img {
+            width: 90%;
+            padding: 5%;
+      }
+
+      #courses {
+            width: 85%;
+            margin: auto;
+            margin-top: 30px;
+            row-gap: 10px;
+            column-gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+      }
+
+      #courses>div {
+            width: 90%;
+            display: flex;
+            align-items: center;
+      }
+
+      #courses img {
+            width: 30%;
+      }
+
+      .child-box {
+            padding-left: 20px;
+      }
+
+      /* keep media queries at that last */
+      /* medium screens */
+      @media only screen and (min-width: 421px) and (max-width: 720px) {
+
+            #teachers,
+            #courses {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+            }
+
+            .child-section h3,
+            h6,
+            p {
+                  margin-top: -5px;
+            }
+      }
+
+      /* small screens */
+      @media only screen and (min-width: 0px) and (max-width: 420px) {
+
+            #teachers,
+            #courses {
+                  display: grid;
+                  grid-template-columns: repeat(1, 1fr);
+            }
+
+            .child-section h3,
+            h6,
+            p {
+                  margin-top: -5px;
+            }
+      }
