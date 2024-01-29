@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         #container {
-            width 80%;
+            width: 80%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
@@ -32,25 +32,25 @@
         .top-child>h4 {
             color: brown;
         }
+
         /* medium screens */
-      @media only screen and (min-width: 421px) and (max-width: 720px) {
-        #container{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
-      }
-
-      /* small screens */
-      @media only screen and (min-width: 0px) and (max-width: 420px) {
-        #container{
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            grid-template-rows: repeat(1, 1fr);
-            grid-row: ;
+        @media only screen and (min-width: 421px) and (max-width: 720px) {
+            #container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
         }
 
-      }
+        /* small screens */
+        @media only screen and (min-width: 0px) and (max-width: 420px) {
+            #container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+            }
+
+        }
     </style>
 </head>
 
