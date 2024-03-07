@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="color">masai school</h1>
+    <h1 id="color">santosh Pawar</h1>
+
+
+<p>p1</p>
+<p>p2</p>
+<p>p3</p>
+<p>p4</p>
+<p>p5</p>
+</body>
+<script>
+
+    // querySelector Will return only 1st element that matches;
+
+    
+//    let x = document.querySelector("h1");
+//    x.style.backgroundColor ="teal";
+
+//    let y = document.querySelector("#color");
+//    y.style.color="red"
+
+var s =document.createElement("h1");
+s.textContent = "I was A very cleaver boy";
+document.body.appendChild(s);
+
+
+
+var ss = document.querySelectorAll("h1");
+for (var i=0; i<=ss.length; i++){
+    ss[i].style.backgroundColor="red"
+}
+
+
+
+
+
+
+// let z = document.getElementsByTagName("h1");
+// for (let i=0; i<z.length; i++){
+//     z[i].style.backgroundColor="red"
+// }
+
+
+// let b = document.getElementsByTagName("h1");
+// for (let i=0; i<b.length; i++){
+//     b[i].style.Color="teal"
+// }
+
+// let w = document.querySelectorAll("p");
+// // w.style.color="white"
+// for (let i=0; i<w.length; i++){
+//     w[i].style.color="white"
+// }
+
+
+
+// let f = document.querySelectorAll("p")
+// for (let i=0; i<f.length; i++){
+//     f[i].style.backgroundColor="red"
+// }
+
+// let store = document.querySelectorAll("h1")
+// for (let i=0; i<store.length; i++){
+//     store[i].style.fontSize="50px"
+// }
+
+</script>
+</html>

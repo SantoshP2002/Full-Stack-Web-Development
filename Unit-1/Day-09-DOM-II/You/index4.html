@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addEventListener Example</title>
+</head>
+<body>
+
+
+  <!-- EX: 1 -->
+  <!-- addEventListener -->
+
+
+
+<button id="myButton">Click me</button>
+<!-- <button id="myShare">share me</button> -->
+
+<script>
+// Get the button element by its ID
+const button = document.getElementById('myButton');
+
+// // Function to be executed when the button is clicked
+function handleClick() {
+  console.log('Button clicked!');
+  alert('Button clicked!');
+}
+
+// // Attach the event listener to the button
+button.addEventListener('click', handleClick);
+
+// You can also use an anonymous function directly
+// button.addEventListener('click', function() {
+//   console.log('Button clicked!');
+//   alert('Button clicked!');
+// });
+
+var x = document.getElementById("myShare");
+function handleClick() {
+    console.log("Share Here");
+    alert("Share Here");
+}
+x.addEventListener("Click", handleClick);
+
+
+</script>
+
+</body>
+
+</html>
