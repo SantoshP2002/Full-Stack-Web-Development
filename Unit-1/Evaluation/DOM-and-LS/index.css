@@ -1,0 +1,11 @@
+#nav{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+#right-section{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
