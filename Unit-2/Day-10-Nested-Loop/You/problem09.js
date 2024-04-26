@@ -1,6 +1,6 @@
 // Find the prime number
 
-let number = 67;
+let number = 10;
 let factor = 0;
 for (let i = 1; i <= number; i++) {
   if (number % i == 0) {
