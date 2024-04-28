@@ -1,0 +1,17 @@
+/* #header{
+    display: flex;
+    justify-content: space-evenly;
+} */
+#container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#select1{
+    /* width: 20px; */
+    height: 20px;
+}
+
+#select2{
+    height: 20px;
+}
