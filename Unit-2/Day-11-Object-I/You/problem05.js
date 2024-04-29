@@ -12,9 +12,10 @@ let details = {
   // Dot Notation (.);
 
   details.hobbies = 'play a kabbadi',
-  console.log(details);
+  // console.log(details);
 
   // Bracket Notation :-
 
   details['enemy'] = 'shrutika',
+  
   console.log(details);
