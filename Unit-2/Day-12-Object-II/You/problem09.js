@@ -4,3 +4,6 @@ let score = [10, 20, 30, 40];
 
 let object = {};
 
+// Output =>
+
+// {name:'goku',score:10}
