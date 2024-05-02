@@ -3,7 +3,7 @@
 
 let data = {
 
-    sum: function (a,b){
+    sum: (a,b)=>{
         return a+b;
     }
 }
