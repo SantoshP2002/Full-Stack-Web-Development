@@ -1,12 +1,19 @@
-let name = 'santoh';
+let details = {
+    name: 'santosh',
+    age: 22,
+    address: 'nanded',
+    print:function(){
+        let obj = {
+            name: 'nagesh',
+            sayHi: function(){
 
-let obj = {
-    name: name,
-    print: function(){
-        console.log(this.name);
+                console.log(this.name);
+            }
+        }
+        obj.sayHi()
     }
-
 }
-// obj.print()
+details.print();
 
-console.log(this.name);
+
+// console.log(details);
