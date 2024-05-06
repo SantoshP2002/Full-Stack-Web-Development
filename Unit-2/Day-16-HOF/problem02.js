@@ -13,9 +13,9 @@ let divided = (number) => {
 function print(array) {
   for (let i = 0; i < array.length; i++) {
     if (divided(array[i]) == true) {
-    //   console.log(array[i]);
+      console.log(array[i]);
 
-        return output;
+        // return output;
     }
   }
 }
