@@ -1,5 +1,7 @@
+
+// Map Method: -->
 // Syntax :--> 
-// arrayName,.Map(function(){})
+// arrayName,.Map(function(Element, Index){})
 
 
 
