@@ -1,3 +1,8 @@
+// Syntax :--> 
+// arrayName,.Map(function(){})
+
+
+
 //  let array = [12,34,56,79,85]
 
 // let result =  array.map(function(num){
@@ -25,11 +30,18 @@
 // console.log(result);
 
 
-let array = [1,2,3,4,56,6,78,];
+// let array = [1,2,3,4,56,6,78,];
 
-let result = array.map(function(value){
-  return value - 10;
-})
-console.log(result);
+// let result = array.map(function(value){
+//   return value - 10;
+// })
+// console.log(result);
 
 // Output = > [-9,-8,-7,-6,46,-4,68];
+
+let number = [1,2,3,4,6,7,8,9];
+ 
+let result = number.map(function(num){
+    return num * 2;
+})
+console.log(result);
