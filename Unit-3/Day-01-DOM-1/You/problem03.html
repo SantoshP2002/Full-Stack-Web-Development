@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="container">
-        <div class="item" id="1">Item1</div>
+        <div class="item" id="first">Item1</div>
         <div class="item">Item2</div>
         <div class="item">Item3</div>
         <div class="item">Item4</div>
@@ -17,10 +17,36 @@
     </div>
 </body>
 <script>
+
+    // getElementById :
+
     let container = document.getElementById("container");
     console.log(container);
 
-    
-    
+
+    // getElementsByClassName :
+
+    let element = document.getElementsByClassName('item');
+    console.log(element);
+
+    // getElementByTagName :
+
+    let element1 = document.getElementsByTagName('div');
+    console.log(element1);
+
+
+    // querySelector("#idName");
+    // querySelector(".className");
+    // querySelector("tagName");
+
+    let element2 = document.querySelector("div");
+    console.log(element2);
+
+
+    // Target the only Content in HTML Element;
+    // textContent  OR  innerText :
+
+    let element3 = document.getElementById("container");
+    console.log(element3.innerHTML);
 </script>
 </html>
