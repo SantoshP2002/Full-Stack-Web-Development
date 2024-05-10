@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Replace the Text</h1>
+    <h2>hello!</h2>
+    <input id="input1" type="text" placeholder="Enter The Name..." />
+    <select id="select1">
+      <option value="">--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <button onclick="catchName()">Submit</button>
+  </body>
+
+  <script>
+    // setAttribute =>
+
+    let newHeading = document.querySelector("h1");
+    newHeading.style.color = "green";
+    newHeading.setAttribute("id", "target");
+    newHeading.setAttribute("class", "topPart");
+    console.log(newHeading);
+
+    // Code =>
+
+    function catchName() {
+      let element = document.getElementById("input1").value;
+      console.log(element);
+
+      let element1 = document.getElementById("select1").value;
+      console.log(element1);
+
+      let heading = document.querySelector("h1");
+      heading.textContent = element;
+
+      let heading1 = document.querySelector("h2");
+      heading1.textContent = element1;
+    }
+  </script>
+</html>

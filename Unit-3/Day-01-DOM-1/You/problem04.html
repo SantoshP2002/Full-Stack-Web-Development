@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Santosh</h1>
+    <button onclick="changeName()">Change the Text</button>
+    <button onclick="reset()">Reset</button>
+    <button onclick="remove()">Delete</button>
+  </body>
+
+  <script>
+    function changeName() {
+      let result = document.querySelector("h1");
+      result.textContent = "Shrutika";
+      console.log(result);
+    }
+
+    function reset(){
+        let element = document.querySelector('h1');
+        element.textContent = 'Santosh';
+        console.log(element);
+    }
+
+    function remove(){
+        let element = document.querySelector('h1');
+        element.textContent = '';
+        console.log(element);
+    }
+  </script>
+</html>

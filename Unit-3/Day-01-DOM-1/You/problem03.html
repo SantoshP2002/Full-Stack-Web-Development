@@ -39,12 +39,15 @@
     // querySelector(".className");
     // querySelector("tagName");
 
-    let element2 = document.querySelector("div");
-    console.log(element2);
+    let element2 = document.querySelectorAll(".item");
+
+        element2.forEach(function(ele){
+                console.log(ele.innerHTML);
+        });
+        console.log(element2);
 
 
-    // Target the only Content in HTML Element;
-    // textContent  OR  innerText :
+     // textContent  OR  innerText :
 
     let element3 = document.getElementById("container");
     console.log(element3.innerHTML);
