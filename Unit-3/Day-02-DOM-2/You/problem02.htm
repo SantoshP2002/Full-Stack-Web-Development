@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* #container{
+            border: 2px solid;
+            width: 210px;
+            justify-content: center;
+        }
+
+        #container>p{
+            /* padding-left: 10px; */
+      /* } */
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p id="H1">Enter Name</p>
+      <input id="name" type="text" placeholder="Enter Name..." />
+      <p>Gender</p>
+      <select name="" id="gender">
+        <option value="">--</option>
+        <option value="male">male</option>
+        <option value="female">Female</option>
+      </select>
+      <p>Age</p>
+      <input id="age" type="text" placeholder="Enter Age..." />
+      <button id="submit">Submit</button>
+    </div>
+
+    <h1 id="nameText">name</h1>
+    <h1 id="genderText">Gender</h1>
+    <h1 id="ageText">age</h1>
+  </body>
+
+  <script>
+    let btn = document.getElementById("submit");
+    btn.addEventListener("click", function () {
+      getData();
+    });
+
+    function getData() {
+      let name = document.getElementById("name").value;
+      let gender = document.getElementById("gender").value;
+      let age = document.getElementById("age").value;
+
+      console.log(name, gender, age);
+
+      let nameText = document.getElementById("nameText");
+      nameText.textContent = name;
+      let genderText = document.getElementById("genderText");
+      genderText.textContent = gender;
+      let ageText = document.getElementById("ageText");
+      ageText.textContent = age;
+    }
+  </script>
+</html>
