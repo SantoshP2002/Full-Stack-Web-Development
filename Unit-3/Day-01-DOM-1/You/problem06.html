@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        border: 2px solid red;
+      }
+      #container > img{
+        width: 250px;
+        /* padding-left: 210px; */
+      }
+      nav > img {
+        
+        width: 250px;
+      }
+
+      
+      
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img
+        src="https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q="
+        alt="Tree"
+      />
+      <h1>I am Tree</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
+        voluptatibus aliquid eos nisi laboriosam tempora eius atque! Doloremque
+        aliquid, fuga soluta ex eos eaque excepturi. Dignissimos laborum
+        praesentium architecto laudantium?
+      </p>
+    </nav>
+
+    <div id="container"></div>
+  </body>
+
+  <script>
+
+    // document.createElement =>
+
+    let img1 = document.createElement("img");
+    img1.setAttribute(
+      "src",
+      "https://media.istockphoto.com/id/1317323736/photo/a-view-up-into-the-trees-direction-sky.jpg?s=612x612&w=0&k=20&c=i4HYO7xhao7CkGy7Zc_8XSNX_iqG0vAwNsrH1ERmw2Q="
+    );
+    console.log(img1);
+    let heading = document.createElement("h1");
+    heading.textContent = "I am Tree";
+    let para = document.createElement("p");
+    para.textContent = "Lorem ipsum dolor, sit amet consectetur adipisicing";
+
+    console.log(heading, para);
+
+    let container = document.getElementById("container"); 
+    container.append(heading,img1, para);
+
+    //
+  </script>
+</html>

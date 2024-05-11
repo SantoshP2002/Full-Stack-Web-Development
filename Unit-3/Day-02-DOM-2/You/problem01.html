@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="Hi()">Submit</button> -->,
+    <select id="select1">
+        <option value="--">--</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <input id="input1" type="text" placeholder="Name...">
+    <button id="submit">Submit</button>
+</body>
+<script>
+
+// addEventListener =>
+
+    let btn = document.getElementById('submit');
+    btn.addEventListener('click', function(){
+        Hi()
+    })
+
+
+
+
+    function Hi(){
+       let input1 =  document.getElementById('input1').value
+        console.log(input1);
+        let select1 = document.getElementById('select1').value
+        console.log(select1);
+    }
+
+</script>
+</html>
