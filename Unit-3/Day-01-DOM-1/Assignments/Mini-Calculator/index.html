@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Calculator</title>
+    <style>
+      #container {
+        border: 3px solid green;
+        width: 40%;
+        margin: auto;
+        margin-top: 150px;
+        padding-bottom: 30px;
+        border-radius: 15px;
+      }
+      #container > h1 {
+        text-align: center;
+      }
+      #inputs {
+        width: 70%;
+        margin: auto;
+      }
+      #button {
+        margin-top: 20px;
+
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Mini Calculator</h1>
+      <div id="inputs">
+        <input id="num1" type="number" placeholder="Enter 1st number" />
+        <input id="num2" type="number" placeholder="Enter 2nd number" />
+      </div>
+      <div id="button">
+        <button onclick="add()">Add</button>
+        <button onclick="subtract()">Subtract</button>
+        <button onclick="divided()">Divided</button>
+        <button onclick="multiply()">Multiply</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+    function add() {
+      alert(
+        `${num1.value} + ${num2.value} = ${
+          Number(num1.value) + Number(num2.value)
+        }`
+      );
+    }
+
+    function subtract() {
+      alert(
+        `${num1.value} - ${num2.value} = ${
+          Number(num1.value) - Number(num2.value)
+        }`
+      );
+    }
+
+    function divided() {
+      alert(
+        `${num1.value} / ${num2.value} = ${
+          Number(num1.value) / Number(num2.value)
+        }`
+      );
+    }
+
+    function multiply() {
+      alert(
+        `${num1.value} * ${num2.value} = ${
+          Number(num1.value) * Number(num2.value)
+        }`
+      );
+    }
+  </script>
+</html>

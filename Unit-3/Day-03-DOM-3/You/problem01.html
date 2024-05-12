@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 90%;
+            margin: auto;
+            border: 2px solid red;
+        }
+        #container > div{
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let element = {
+        imageUrl:"https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_UF1000,1000_QL80_DpWeblab_.jpg",
+        name: 'Apple iPhone 14 (Blue, 128 GB)',
+        price: '57,999'
+    }
+
+    let container = document.getElementById('container');
+    let card = document.createElement('div');
+
+    let image = document.createElement('img');
+    image.src = element.imageUrl;
+
+    let h4 = document.createElement('h4');
+    h4.textContent = element.name;
+
+    let price = document.createElement('p'); 
+    price.textContent = element.price;
+</script>
+</html>
