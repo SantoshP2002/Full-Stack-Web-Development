@@ -47,6 +47,7 @@
                     <th>Name</th>
                     <th>Gender</th>
                     <th>age</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,16 +82,16 @@
     function formData() {
       event.preventDefault();
 
-      console.log(name.value, gender.value, age.value);
+      // console.log(name.value, gender.value, age.value);
 
       let obj = {
         name:name.value,
         gender:gender.value,
         age:age.value,
       }
-      console.log(obj);
+      // console.log(obj);
       array.push(obj);
-      console.log(array);
+      // console.log(array);
       displayData(array);
 
       //   let nameText = document.getElementById("nameText");
@@ -122,7 +123,7 @@
 
     function displayData(array){
         document.querySelector('tbody') . innerHTML = ""
-        array.forEach(function(ele){
+        array.forEach(function(ele, i){
 
             let tr = document.createElement('tr')
 
@@ -135,11 +136,26 @@
       let td3 = document.createElement("td");
       td3.textContent = ele.age;
 
-      tr.append(td1, td2, td3);
+      let btn = document.createElement('button');
+      btn.textContent = 'delete'
+      btn.addEventListener('click', function(){
+        deleteData(i);
+        console.log(i);
+      })
+
+      tr.append(td1, td2, td3, btn);
       document.querySelector('tbody').append(tr);
         });
+    }
 
-        
+    function deleteData(i){
+        // array.splice(i,1);
+        let newArr = array.filter((ele,index)=> index!==i);
+            array = newArr;
+        console.log(array);
+        displayData(array);
+        // displayData(newArr);
+
     }
   </script>
 </html>
