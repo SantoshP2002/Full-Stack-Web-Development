@@ -1,0 +1,66 @@
+<!--  Local Storage ;  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Local Storage</h1>
+</body>
+<script>
+
+    let name1 = 'santosh pawar';
+    console.log(name1);
+
+    let num1 = 9322;
+
+    // Local Storage Work
+
+    // 1. setItem()
+    // 2. getItem()
+    // 3. removeItem()
+    // 4. clear()
+
+    // Local Storage
+    // Syntax =>
+    // localStorage.setItem('key', value);
+
+    localStorage.setItem('MyName', name1);
+
+    localStorage.setItem('Number', num1);
+
+    localStorage.removeItem('MyName');
+
+    localStorage.clear();
+
+
+    // let obj = {
+    //     name: 'santosh',
+    // }
+
+    // localStorage.setItem('info', obj);
+
+
+
+    // JSON Methods =>
+    // 1. JSON.stringify()
+    // 2. JSON.parse()
+
+ let obj = {
+        name: 'santosh',
+        age: 22,
+        place: 'Nanded',
+        class: 12,
+    }
+
+    localStorage.setItem('info',JSON.stringify(obj));
+    let obj2 = localStorage.getItem('user');
+    console.log(obj2);
+
+
+
+</script>
+</html>

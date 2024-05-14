@@ -17,7 +17,9 @@
     </style>
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+
+    </div>
 </body>
 <script>
     let element = {
@@ -37,5 +39,8 @@
 
     let price = document.createElement('p'); 
     price.textContent = element.price;
+
+    card.append(image,h4,price);
+    container.append(card);
 </script>
 </html>
