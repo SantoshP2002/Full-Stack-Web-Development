@@ -57,8 +57,10 @@
     }
 
     localStorage.setItem('info',JSON.stringify(obj));
-    let obj2 = localStorage.getItem('user');
+    let obj2 = JSON.parse(localStorage.getItem('info'));
     console.log(obj2);
+
+    
 
 
 
