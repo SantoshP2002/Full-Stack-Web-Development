@@ -149,9 +149,9 @@
     }
 
     function deleteData(i){
-        // array.splice(i,1);
-        let newArr = array.filter((ele,index)=> index!==i);
-            array = newArr;
+        array.splice(i,1);
+        // let newArr = array.filter((ele,index)=> index!==i);
+        //     array = newArr;
         console.log(array);
         displayData(array);
         // displayData(newArr);
