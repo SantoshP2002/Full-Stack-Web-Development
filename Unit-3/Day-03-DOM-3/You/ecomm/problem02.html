@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        width: 150%;
+        margin: auto;
+        border: 2px solid red;
+      }
+      #container > div {
+        border-radius: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./cart.html">Cart Page</a>
+    <div id="container"></div>
+  </body>
+  <script>
+    let products = [
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+      {
+        imageUrl:
+          "https://www.91-img.com/gallery_images_uploads/e/8/e8e9b098db6d33f4853d559c7aa991f5bda8d359.jpg?tr=h-630,c-at_max,q-80",
+        name: "Apple iPhone 14 (Blue, 128 GB)",
+        price: "57,999",
+      },
+    ];
+
+    let container = document.getElementById("container");
+
+    products.forEach(function (ele) {
+      let card = document.createElement("div");
+
+      let image = document.createElement("img");
+      image.src = ele.imageUrl;
+
+      let h4 = document.createElement("h4");
+      h4.textContent = ele.name;
+
+      let price = document.createElement("p");
+      price.textContent = ele.price;
+
+      let btn = document.createElement("button");
+      btn.textContent = "Add to Cart";
+      btn.addEventListener("click", function () {
+        addToCart(ele);
+      });
+
+      card.append(image, h4, price, btn);
+      container.append(card);
+    });
+
+    let cartArray = JSON.parse(localStorage.getItem('cart')) || [];
+    function addToCart(ele) {
+      console.log(ele);
+      cartArray.push(ele);
+
+      console.log(cartArray);
+      localStorage.setItem(JSON.stringify('cart',cartArray))
+    }
+
+    //    let result = localStorage.getItem('MyName');
+    //    console.log(result);
+  </script>
+</html>
