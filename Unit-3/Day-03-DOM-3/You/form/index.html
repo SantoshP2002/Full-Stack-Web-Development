@@ -18,6 +18,8 @@
     </style>
   </head>
   <body>
+
+    <a href="./data.html">Data Page</a>
     <form>
       <div id="container">
         <p id="H1">Enter Name</p>
@@ -39,23 +41,16 @@
     <h1 id="genderText">Gender</h1>
     <h1 id="ageText">age</h1> -->
 
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Gender</th>
-          <th>age</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr>
-                    <td>Santosh</td>
-                    <td>Male</td>
-                    <td>22</td>
-                </tr> -->
-      </tbody>
-    </table>
+
+    <div id="filter">
+      <select name="" id="filterdata">
+        <option value="">filter by gender</option>
+        <option value="male">male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    
   </body>
 
   <script>
@@ -71,7 +66,6 @@
 
     let array = JSON.parse(localStorage.getItem('userData')) || [];
     console.log(array);
-    displayData(array);
 
 
     function formData() {
@@ -90,7 +84,6 @@
 
       localStorage.setItem('userData',JSON.stringify(array))
 
-      displayData(array);
 
       //   let nameText = document.getElementById("nameText");
       //   nameText.textContent = name;
@@ -118,39 +111,6 @@
       //   document.querySelector('tbody').append(tr);
     }
 
-    function displayData(array) {
-      document.querySelector("tbody").innerHTML = "";
-      array.forEach(function (ele, i) {
-        let tr = document.createElement("tr");
-
-        let td1 = document.createElement("td");
-        td1.textContent = ele.name;
-
-        let td2 = document.createElement("td");
-        td2.textContent = ele.gender;
-
-        let td3 = document.createElement("td");
-        td3.textContent = ele.age;
-
-        let btn = document.createElement("button");
-        btn.textContent = "delete";
-        btn.addEventListener("click", function () {
-          deleteData(i);
-          console.log(i);
-        });
-
-        tr.append(td1, td2, td3, btn);
-        document.querySelector("tbody").append(tr);
-      });
-    }
-
-    function deleteData(i) {
-      array.splice(i, 1);
-      // let newArr = array.filter((ele,index)=> index!==i);
-      //     array = newArr;
-      console.log(array);
-      displayData(array);
-      // displayData(newArr);
-    }
+    
   </script>
 </html>

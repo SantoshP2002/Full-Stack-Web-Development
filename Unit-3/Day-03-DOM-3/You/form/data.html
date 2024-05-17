@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>age</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+                  <td>Santosh</td>
+                  <td>Male</td>
+                  <td>22</td>
+              </tr> -->
+    </tbody>
+  </table>
+</body>
+<script>
+     let array = JSON.parse(localStorage.getItem('userData')) || [];
+    
+     displayData(array)
+     function displayData(array) {
+      document.querySelector("tbody").innerHTML = "";
+      array.forEach(function (ele, i) {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.textContent = ele.name;
+
+        let td2 = document.createElement("td");
+        td2.textContent = ele.gender;
+
+        let td3 = document.createElement("td");
+        td3.textContent = ele.age;
+
+        let btn = document.createElement("button");
+        btn.textContent = "delete";
+        btn.addEventListener("click", function () {
+          deleteData(i);
+          console.log(i);
+        });
+
+        tr.append(td1, td2, td3, btn);
+        document.querySelector("tbody").append(tr);
+      });
+    }
+
+    function deleteData(i) {
+      array.splice(i, 1);
+      // let newArr = array.filter((ele,index)=> index!==i);
+      //     array = newArr;
+      console.log(array);
+      displayData(array);
+      // displayData(newArr);
+    }
+</script>
+</html>
