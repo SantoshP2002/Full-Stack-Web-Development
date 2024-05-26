@@ -18,7 +18,7 @@
 let array = [1, 2, 3, 4, 5, 6];
 
 let output = array.filter(function (i) {
-  return i % 2 == 0;
+  return i % 2 == 1;
 });
 console.log(output);
 
