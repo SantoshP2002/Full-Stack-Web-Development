@@ -15,15 +15,15 @@
 
 // blocking of code and non-blocking of code =>
 
-    // console.log('Hi');
-    // for(let i=0; i<700000000; i++){
+//     console.log('Hi');
+//     for(let i=0; i<700000000; i++){
 
-    // }
-    // console.log('Welcome to Masai School');
-    //  console.log('Pyare Mohan Ji');
+//     }
+//     console.log('Welcome to Masai School');
+//      console.log('Pyare Mohan Ji');
 
 
- // SetTimeOut OR SetInterval =>
+//  SetTimeOut OR SetInterval =>
 
 // console.log('hii');
 // function sayName(){
@@ -71,26 +71,30 @@
 
 // Other Ex =>
 
-    // console.log('Start');
+//     console.log('Start');
 
-    // function f1(){
-    //     console.log('fn1');
-    // }
-    // function f2(){
-    //     console.log('fn2');
-    // }
-    // function f3(){
-    //     console.log('fn3');
-    // }
+//     function f1(){
+//         console.log('fn1');
+//     }
+//     function f2(){
+//         console.log('fn2');
+//     }
+//     function f3(){
+//         console.log('fn3');
+//     }
 
-    // setTimeout(f1,4000);
-    // setTimeout(f2,0);
-    // setTimeout(f3,3000);
+//     setTimeout(f1,4000);
+//     setTimeout(f2,0);
+//     setTimeout(f3,3000);
 
-    // console.log('Code End');
+//     console.log('Code End');
 
 
-    console.log(1);
-    console.log(2);
+//     console.log(1);
+//     console.log(2);
 
-    setTimeout(()=>{console.log('setTimeOut');},3000)
+//     setTimeout(()=>{console.log('setTimeOut');},3000);
+//     Promise.resolve().then(()=>{console.log('Promises')});
+
+//     console.log(3);
+//     console.log(4);
