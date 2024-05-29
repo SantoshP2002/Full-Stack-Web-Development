@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+      img {
+        width: 120%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let products = [{
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    },
+    {
+      imageUrl:
+        "https://www.maplestore.in/cdn/shop/files/iPhone_14_Blue_PDP_Image_Position-1A__WWEN_43b0347b-c716-4297-b1d4-a15af53ad270_1445x.jpg?v=1701815316",
+      name: "Apple iPhone 14(Blue, 128 GB)",
+      price: "67,599",
+    }]
+
+
+    products.forEach(function(ele){
+
+        let container = document.getElementById("container");
+    let card = document.createElement("div");
+
+    let image = document.createElement("img");
+    image.src = ele.imageUrl;
+
+    let h4 = document.createElement("h4");
+    h4.innerText = ele.name;
+
+    let price = document.createElement("p");
+    price.innerText = ele.price;
+
+    // let btn = document.createElement("button");
+    // btn.innerText = "Show Alert";
+    // btn.setAttribute("click", "btnClick");
+    // btn.addEventListener("click", function () {
+    //   alert(`${ele.name} Button Is Clicked`);
+    // });
+
+    card.append(image, h4, price);
+    container.append(card);
+    });
+    
+  </script>
+</html>

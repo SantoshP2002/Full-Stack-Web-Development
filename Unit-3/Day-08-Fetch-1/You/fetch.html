@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      img {
+        width: 60%;
+      }
+      #container > div{
+        border: 2px solid;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Search</button>
+    <div id="container"></div>
+  </body>
+  <script>
+    // SYNTAX
+    // fetch('address(API)')
+
+    document.getElementById('btn').addEventListener('click',function(){
+        getData();
+    });
+
+    function getData() {
+      fetch(`https://fakestoreapi.com/carts`)
+        .then(function (res) {
+          console.log(res);
+          return res.json();
+        })
+
+        .then(function (data) {
+          console.log("Data", data);
+          displayData(data);
+        })
+
+        .catch(function (Error) {
+          console.log(Error);
+        });
+    }
+
+    
+
+    
+    function displayData(arr) {
+        let container = document.getElementById("container");
+    container.innerHTML = "";
+
+      arr.forEach(function (ele) {
+        let card = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.src = ele.image;
+
+        let h4 = document.createElement("h4");
+        h4.innerText = ele.title;
+
+        let price = document.createElement("p");
+        price.innerText = ele.price;
+
+        card.append(image, h4, price);
+        container.append(card);
+      });
+    }
+
+    // console.log(fetch1);
+  </script>
+</html>
