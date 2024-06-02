@@ -13,7 +13,7 @@
       img {
         width: 60%;
       }
-      #container > div{
+      #container > div {
         border: 2px solid;
         border-radius: 7px;
       }
@@ -27,33 +27,51 @@
     // SYNTAX
     // fetch('address(API)')
 
-    document.getElementById('btn').addEventListener('click',function(){
-        getData();
+    document.getElementById("btn").addEventListener("click", function () {
+      getData();
     });
 
-    function getData() {
-      fetch(`https://fakestoreapi.com/products`)
-        // .then(function (res) {
-        //   console.log(res);
-        //   return res.json();
-        // })
+    // function getData() {
+    //   fetch(
+      
+    
+    //     .then(function (res) {
+    //       console.log(res);
+    //       return res.json();
+    //     })
 
-        // .then(function (data) {
-        //   console.log("Data", data);
-        //   displayData(data);
-        // })
+    //     .then(function (data) {
+    //       console.log("Data", data);
+    //       displayData(data);
+    //     })
 
-        // .catch(function (Error) {
-        //   console.log(Error);
-        // });
+    //     .catch(function (Error) {
+    //       console.log(Error);
+    //     });
+    // }
+      let myProduct = 'products'
+    async function getData() {
+      alert('Check the Data')
+      try {
+        let res = await fetch(`https://fakestoreapi.com/${myProduct}`);
+        console.log(res);
+
+        let data = await res.json();
+        console.log(data);
+        displayData(data);
+      } catch (error) {
+        console.log(error);
+      }
     }
 
-    
 
-    
+
+
+
+
     function displayData(arr) {
-        let container = document.getElementById("container");
-    container.innerHTML = "";
+      let container = document.getElementById("container");
+      container.innerHTML = "";
 
       arr.forEach(function (ele) {
         let card = document.createElement("div");
