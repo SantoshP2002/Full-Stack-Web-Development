@@ -83,6 +83,68 @@
 
 // EX: 02
 
-function sum (...rest){
-        console.log(rest);
-    }
+// function sum (first, second,...rest){
+//         console.log(first, second,rest);
+//     }
+//     sum(1,2,3,4)
+
+
+   // Spread Operator =>
+
+
+    // EX:01
+    // let arr1 = [1,2,3,4];
+
+    // let arr2 = [5,6,7,8];
+
+    // let arr3 = [...arr1, ...arr2, 9,10];
+
+    // console.log(arr3);
+
+    // EX:02
+    // let obj1 = {name:'Santosh', age:22};
+
+    // let obj2 ={gender:'Male'};
+
+    // let obj3 ={...obj1, ...obj2};
+    // console.log(obj3); 
+
+
+    // Destructuring =>
+
+        // EX:01
+        // let arr1 = [1,2,3,45]
+
+        // let [first, second, third, fourth] = arr1;
+
+        // console.log(second);
+
+        //EX:02
+        // let obj = {
+        //     FirstName:'Santosh',
+        //     LastName: 'Pawar',
+        //     age: 22
+
+        // }
+
+        // let {FirstName,LastName,age} = obj
+
+        // console.log(FirstName,LastName,age);
+
+        //EX:03
+        // Object in Object
+
+        let user ={
+            id: 334,
+            name: 'Santosh',
+            age: 22,
+            education :{
+                degree: 'Masters'
+            }
+        }
+
+        let {education} = user  
+
+        let {degree} = education
+        console.log(degree);
+        
