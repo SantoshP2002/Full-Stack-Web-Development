@@ -9,8 +9,6 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            /* border: 2px solid red; */
-            /* border-radius: 10px; */
             padding-top: 5px;
             margin-top: 15px;
         }
@@ -20,17 +18,19 @@
         }
 
         div{
-            border: 2px solid;
+            border: 2px solid; 
             border-radius: 10px;
             padding: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>Fetch-2</h1>
-    <input type="text" id="searchData" placeholder="Search...">
-    <button id="searchBtn">Search</button>
     <div id="container"></div>
+    <select name="" id="sortData">
+        <option value="">Choose asc to desc</option>
+        <option value="asc">asc</option>
+        <option value="desc">desc</option>
+    </select>
 </body>
 <script src="index.js"></script>
 </html>
