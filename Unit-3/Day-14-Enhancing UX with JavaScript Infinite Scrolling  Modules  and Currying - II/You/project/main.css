@@ -1,0 +1,53 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+#navBar {
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: rgb(159, 109, 109);
+  padding: 15px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navBar > a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#container > div {
+  border: 1px solid black;
+  border-radius: 9px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  background-color: rgb(161, 229, 229);
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+#input1{
+    padding: 5px;
+    margin: 15px;
+    border-radius: 8px;
+    border: 1px solid;
+}
+
+#btn{
+    border: 1px solid;
+    border-radius: 7px;
+    background-color: rgb(237, 224, 248);
+    font-size: 13px;
+}
