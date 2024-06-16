@@ -31,17 +31,17 @@
 
 // Event =>
 
-// function alertBox(a) {
-//   console.log("hello" + a);
-// }
+function alertBox(a) {
+  console.log("hello" + a);
+}
 
-// let data = true;
-// const element = (<div className="container" style={{ color: data ? "red" : "green" }}>
-//     {data ? 
-//     ( <button onClick={() => alertBox("santosh")}>Login</button> ) :
-//      ( <button>Logout</button> )}
-//   </div>
-// );
+let data = true;
+const element = (<div className="container" style={{ color: data ? "red" : "green" }}>
+    {data ? 
+    ( <button onClick={() => alertBox("santosh")}>Login</button> ) :
+     ( <button>Logout</button> )}
+  </div>
+);
 
-// const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
-// reactRoot.render(element);
+const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+reactRoot.render(element);
