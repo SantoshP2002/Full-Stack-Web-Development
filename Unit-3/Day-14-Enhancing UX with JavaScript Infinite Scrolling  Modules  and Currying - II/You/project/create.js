@@ -6,7 +6,7 @@ import navBar from "./utils/navbar.js"
 let navbarBox = document.getElementById("navBar")
 navbarBox.innerHTML = navBar()
 
-let url = `http://localhost:8080/todos`;
+let url = `http://localhost:3000/todos`;
 
 let btn = document.querySelector("button")
 btn.addEventListener("click",()=>{

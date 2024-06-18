@@ -6,7 +6,7 @@ let navbarBox = document.getElementById("navBar")
 navbarBox.innerHTML = navBar()
 
 
-let url = `http://localhost:8080/todos`;
+let url = `http://localhost:3000/todos`;
 
 let container = document.getElementById("container");
 let displayData = (data) => {
@@ -32,8 +32,7 @@ let displayData = (data) => {
                     'Content-Type' : 'application/json'
                 }
             })
-    
-            window.location.href = "index.html" 
+            getData(url)
         } catch (error) {
             console.log(error);
         }
@@ -51,8 +50,6 @@ let getData = async (url) => {
   try {
     let res = await fetch(url);
     let data = await res.json();
-
-    console.log(data);
     displayData(data);
   } catch (error) {
     console.log(error);
