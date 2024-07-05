@@ -3,8 +3,8 @@
 // //     // console.log(a+b);
 // // }
 
-// // let x = sum(2,3);
-// // console.log(x);
+// let x = sum(2,3);
+// console.log(x);
 
 // // function square(num) {
 // //     console.log(num**2);

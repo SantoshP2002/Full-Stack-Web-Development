@@ -1,26 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`http://localhost:8080/todos`);
-      const responseData = await response.json();
+  const [search, setSearch] = useState("")
 
-      console.log(responseData);
-      
-      setTodos(responseData);
+  const x = async function () {
+    try {
+      let res = await fetch(`http://localhost:8000/todos?title=${search}`);
+      let data = await res.json();
+      console.log(data);
+      setTodos(data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
-  
-  useEffect(()=>{
-    fetchData();
-  },[])
-  
-  // console.log("Todos", todos);
-  return <div>ListTodo</div>;
+
+  useEffect(() => {
+    x();
+  }, []);
+
+  return (
+    <div>
+      ListTodo Page
+      <input type="text" onChange={(e)=>}/>
+      {todos.map((ele) => (
+        <li key={ele.id}>
+        <Link to={`/ListTodo/${ele.id}`}>{ele.title}</Link>  
+          </li>
+      ))}
+    </div>
+  );
 };
 
 export default ListTodo;
