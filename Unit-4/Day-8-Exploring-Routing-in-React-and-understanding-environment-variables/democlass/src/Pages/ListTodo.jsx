@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const ListTodo = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get('title') || "")
   const [todos, setTodos] = useState([]);
-  const [search, setSearch] = useState("")
 
   const x = async function () {
     try {
@@ -17,13 +18,14 @@ const ListTodo = () => {
   };
 
   useEffect(() => {
+    setSearchParams({title:search, page: 2})
     x();
-  }, []);
+  }, [search]);
 
   return (
     <div>
       ListTodo Page
-      <input type="text" onChange={(e)=>}/>
+      <input type="text" onChange={(e)=>setSearch(e.target.value)}/>
       {todos.map((ele) => (
         <li key={ele.id}>
         <Link to={`/ListTodo/${ele.id}`}>{ele.title}</Link>  
