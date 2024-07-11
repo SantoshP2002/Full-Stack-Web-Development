@@ -4,26 +4,34 @@ import "./App.css";
 import {
   Box,
   Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
   Checkbox,
+  CircularProgress,
+  Divider,
   Flex,
   Grid,
   GridItem,
+  Heading,
   HStack,
   Input,
   InputGroup,
   InputLeftAddon,
   InputRightElement,
+  PinInput,
+  PinInputField,
   Stack,
   VStack,
 } from "@chakra-ui/react";
-import { px } from "framer-motion";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Box bg="green" w="100%" p={4} color="white">
+      <Box bg="green" w="100%" p={4} color="black">
         This is the Box
         {/* <HStack spacing='24px'>
   <Box w='40px' h='40px' bg='yellow.200'>
@@ -84,6 +92,28 @@ function App() {
     <Input type='tel' placeholder='phone number' />
   </InputGroup>
 </Stack> */}
+        {/* <HStack>
+          <PinInput onChange={(e)=>console.log(e)}>
+            <PinInputField/>
+            <PinInputField/>
+            <PinInputField/>
+            <PinInputField/>
+          </PinInput>
+        </HStack> */}
+        {/* <CircularProgress value={count} />
+        <button onClick={()=>setCount(count+1)}>Increase</button>
+        <button onClick={()=>setCount(count-1)}>Decrease</button>  */}
+        <Flex
+          flexDir={{ base: "column", sm: "column", md: "row", lg: "row" }}
+          color={{ base: "blue", sm: "blue", md: "yellow", lg: "red" }}
+
+        >
+          <Box>1</Box>
+          <Box>1</Box>
+          <Box>1</Box>
+          <Box>1</Box>
+          <Box>1</Box>
+        </Flex>
       </Box>
     </>
   );
