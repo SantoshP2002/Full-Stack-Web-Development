@@ -1,0 +1,22 @@
+{
+    "students": [
+        {
+            "name": "Chunnu",
+            "city": "Pune"
+        },
+        {
+            "name": "Munnu",
+            "city": "Delhi"
+        },
+        {
+            "name": "Tunnu",
+            "city": "punegaon"
+        }
+    ],
+    "teachers": [
+        {
+            "name": "maddy",
+            "age": 50
+        }
+    ]
+}
