@@ -1,0 +1,6 @@
+ID is required and type of ID must be number
+Name is required and the type of name must be string
+Rating is required and the type of Rating must be number
+Description is required and the type of name must be string
+Genre is required and the type of name must be string
+Cast is required and the type of Cast must be a array and it contain string
