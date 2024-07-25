@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { store } from "./redux/store";
+import { useDispatch, useSelector } from "react-redux";
 function App() {
-  const [up, setUp] = useState(0)
-  store.subscribe(() => {
-    console.log(store.getState());
-    setUp(up+1)
-  });
-  console.log(store.getState());
-
+  const data = useSelector(state => state);
+  const dispatch = useDispatch();
   return (
     <>
-      {JSON.stringify(store.getState())}
-      <button onClick={() => store.dispatch({ type: "ADD" })}>+</button>
-      <button onClick={() => store.dispatch({ type: "SUB" })}>-</button>
-      <div></div>
+      <div>
+        {/* <button onClick={() => store.dispatch({ type: "ADD" })}>+</button> */}
+        {/* <button onClick={() => store.dispatch({ type: "SUB" })}>-</button> */}
+
+        {JSON.stringify(data)}
+        <button onClick={() => dispatch({ type: "ADD" })}>+</button> 
+        <button onClick={() => dispatch({ type: "SUB" })}>-</button>
+      </div>
     </>
   );
 }
