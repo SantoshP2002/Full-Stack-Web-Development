@@ -38,16 +38,16 @@
 ### Ans: ` db.payments.aggregate([{$match: { paymentMethod: 'UPI'}},{$group: {_id: null, totalAmount: {$sum: "$amount"}}} ,{$project: {totalAmount: 1, _id:0}}])`
 
 ## Que 14: Write Mongo query to find buyers city as key name "city" who uses hotmail ?
-### Ans: ``
+### Ans: `db.buyers.aggregate([{$match: {email: "john@hotmail.com"}}, {$project: {_id:0, city:1, email:1}}])`
 
 ## Que 15 : Use MongoDB aggregation to retrieve the top 5 most recent orders that have been shipped, projecting the order date, status, and total amount.
 ### Ans: `db.orders.aggregate([{$match: {status: "shipped"}}, {$sort: {order_Date: -1}},{$limit: 5},{$project: {_id:0, order_Data:1, status:1, total:1}}])`
 
 ## Que 16: Aggregate the first 3 payments with a "success" status, projecting the payment date, amount, and method.
-### Ans: ``
+### Ans: `db.payments.aggregate([{$match: { paymentstatus: 'success'}}, {$sort: { payment_date: 1}}, {$limit: 3}, {$project: {_id:0, amount:1, paymentMethod:1}}])`
 
-## Que 17: Aggregate all pending orders, sort them by the order date in desQue : cending order, and project the customer ID, order date, and total amount.
-### Ans: ``
+## Que 17: Aggregate all pending orders, sort them by the order date in descending order, and project the customer ID, order date, and total amount.
+### Ans: `db.orders.aggregate([{$match: {status: 'pending'}}, {$sort: {order_date: -1}}, {$project: {_id:0, customer_id:1, order_date:1, total:1}}])`
 
-## Que 18: Aggregate products, sort them by quantity in descending order, limQue : it the result to the top 10 items, and project the product name and quantity.
-### Ans: ``
+## Que 18: Aggregate products, sort them by quantity in descending order, limit the result to the top 10 items, and project the product name and quantity.
+### Ans: `db.products.aggregate([{$sort: {quantity: -1}}, {$limit: 10}, {$project: {name:1, quantity:1}}])`
