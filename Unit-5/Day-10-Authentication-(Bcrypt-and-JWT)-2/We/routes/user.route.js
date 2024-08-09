@@ -8,25 +8,26 @@ const userRouter = express.Router();
 userRouter.post("/register", async (req, res) => {
   const { name, email, password, age } = req.body;
   try {
-    let user;
-    bcrypt.hash(password, 5, function (err, hash) {
+    // let user; 
+    bcrypt.hash(password, 5,async  function (err, hash) {
       if (err) {
         res
           .status(500)
           .json({ message: `error occured during hashing of password` });
       } else {
-        user = new userModel({
+        const user = new userModel({
           name,
           email,
           password: hash,
           age,
         });
+        await user.save();
+    res.status(201).json({ Message: "user registered successfully" });
       }
     });
-    await user.save();
-    res.status(201).json({ Message: "user registered successfully" });
+    
   } catch (error) {
-    res.status(404).json({ Error: error });
+    res.status(404).json({ Message: `Error occured during creation of user ${error}` });
   }
 });
 
