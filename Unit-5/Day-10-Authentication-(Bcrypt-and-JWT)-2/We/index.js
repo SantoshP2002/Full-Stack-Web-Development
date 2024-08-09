@@ -7,7 +7,7 @@ const auth = require("./middleware/auth.middleware");
 const checkAdmin = require("./middleware/checkAdmin");
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3005;
 
 app.use(express.json());
 app.use("/user", userRouter);
