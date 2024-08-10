@@ -5,9 +5,11 @@ const userRouter = require("./routes/user.route");
 const userModel = require("./models/user.model");
 const auth = require("./middleware/auth.middleware");
 const checkAdmin = require("./middleware/checkAdmin");
+const blacklistedToken = require("./blacklist")
+const jwt = require("jsonwebtoken");
 
 const app = express();
-const PORT = process.env.PORT || 3005;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 app.use("/user", userRouter);
@@ -46,6 +48,31 @@ app.get("/update", [auth, checkAdmin], (req, res) => {
 app.get("/delete", auth, (req, res) => {
   res.send("delete data....");
 });
+
+app.get("logout",(req, res) => {
+  const token = req.headers.authorization.split(" ")[1]
+  blacklistedToken.push(token)
+  res.send("logout sucessfull....")
+});
+
+app.get("/get-accessToken",  (req, res) => {
+  const refreshToken = req.headers.authorization.split(" ")[1];
+  jwt.verify(refreshToken, process.env.JWT_SECRET_KEY2, function (err, decoded) {
+      if(decoded){
+        const accessToken = jwt.sign(
+          { name: decoded.name, role: decoded.role },
+          process.env.JWT_SECRET_KEY1,
+          { expiresIn: "10m" }
+        );
+        res
+          .status(200)
+          .json({
+            Message: "accessToken generated successfully",
+            accessToken
+          });
+      }
+    })
+})
 
 app.listen(PORT, () => {
   try {

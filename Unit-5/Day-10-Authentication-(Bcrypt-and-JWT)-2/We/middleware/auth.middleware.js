@@ -1,8 +1,10 @@
 const jwt = require("jsonwebtoken");
 
 const auth = (req, res, next) => {
-  const token = req.query.token;
-  jwt.verify(token, "masai", function (err, decoded) {
+  const token = req.headers.authorization.split(" ")[1]
+  console.log(token);
+  
+  jwt.verify(token, process.env.JWT_SECRET_KEY1, function (err, decoded) {
     if (err) {
       res.send("unauthorized or login first");
     }

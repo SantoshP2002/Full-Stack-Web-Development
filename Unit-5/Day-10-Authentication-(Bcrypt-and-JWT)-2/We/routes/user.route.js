@@ -8,8 +8,8 @@ const userRouter = express.Router();
 userRouter.post("/register", async (req, res) => {
   const { name, email, password, age } = req.body;
   try {
-    // let user; 
-    bcrypt.hash(password, 5,async  function (err, hash) {
+    // let user;
+    bcrypt.hash(password, 5, async function (err, hash) {
       if (err) {
         res
           .status(500)
@@ -22,26 +22,51 @@ userRouter.post("/register", async (req, res) => {
           age,
         });
         await user.save();
-    res.status(201).json({ Message: "user registered successfully" });
+        res.status(201).json({ Message: "user registered successfully" });
       }
     });
-    
   } catch (error) {
-    res.status(404).json({ Message: `Error occured during creation of user ${error}` });
+    res
+      .status(404)
+      .json({ Message: `Error occured during creation of user ${error}` });
   }
 });
 
+// LOGIN METHOD  :
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await userModel.findOne({ email, password });
+    const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ Message: "Invalid User" });
+      return res.status(400).json({ Message: "User Not Found" });
     }
-    const token = jwt.sign({ name: "santosh", role: user.role }, "masai");
 
-    res.status(201).json({ Message: "user logged in successfully", token });
+    if (user) {
+      bcrypt.compare(password, user.password, function (err, result) {
+        if (result) {
+          const accessToken = jwt.sign(
+            { name: user.name, role: user.role },
+            process.env.JWT_SECRET_KEY1,
+            { expiresIn: "10m" }
+          );
+          const refreshToken = jwt.sign(
+            { name: user.name, role: user.role },
+            process.env.JWT_SECRET_KEY2,
+            { expiresIn: "1day" }
+          );
+          res
+            .status(201)
+            .json({
+              Message: "user logged in successfully",
+              accessToken,
+              refreshToken
+            });
+        } else {
+          res.status(400).json({ Message: "Wrong Password" });
+        }
+      });
+    }
   } catch (error) {
     res.status(404).json({ Error: error });
   }

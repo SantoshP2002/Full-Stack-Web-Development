@@ -1,6 +1,4 @@
-
 const jwt = require("jsonwebtoken");
-
 
 const checkAdmin = (req, res, next) => {
   if (req.body.role === "admin") {
