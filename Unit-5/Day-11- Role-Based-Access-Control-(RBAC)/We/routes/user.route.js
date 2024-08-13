@@ -1,51 +1,66 @@
 const express = require("express");
-const userModel = require("../models/user.model");
+const userModel = require("../model/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 const userRouter = express.Router();
 
-
-// POST REGISTER METHOD =>
 userRouter.post("/register", async (req, res) => {
-  const { name, email, password} = req.body;
+  const { name, email, password, role } = req.body;
   try {
-    let user;
-    bcrypt.hash(password, 5, function (err, hash) {
+    // let user;
+    bcrypt.hash(password, 5, async function (err, hash) {   
       if (err) {
         res
           .status(500)
           .json({ message: `error occured during hashing of password` });
       } else {
-        user = new userModel({
+        const user = new userModel({
           name,
           email,
           password: hash,
-          role, 
+          role,
         });
+        await user.save();
+        res.status(201).json({ Message: "user registered successfully" });
       }
     });
-    await user.save();
-    res.status(201).json({ Message: "user registered successfully" });
   } catch (error) {
-    res.status(404).json({ Error: error });
+    res
+      .status(404)
+      .json({ Message: `Error occured during creation of user ${error}` });
   }
 });
 
-
-
-// POST LOGIN METHOD => 
+// LOGIN METHOD  :
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await userModel.findOne({ email});
+    const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ Message: "Invalid User" });
+      return res.status(400).json({ Message: "User Not Found" });
     }
-    const token = jwt.sign({ name: "santosh", role: user.role }, "masai");
 
-    res.status(201).json({ Message: "user logged in successfully", token });
+    if (user) {
+      bcrypt.compare(password, user.password, function (err, result) {
+        if (result) {
+          const token = jwt.sign(
+            { id: user._id}, 
+            process.env.JWT_SECRET_KEY,
+          );
+          
+          res
+            .status(201)
+            .json({
+              Message: "user logged in successfully",
+              token,
+            });
+        } else {
+          res.status(400).json({ Message: "Wrong Password" });
+        }
+      });
+    }
   } catch (error) {
     res.status(404).json({ Error: error });
   }
