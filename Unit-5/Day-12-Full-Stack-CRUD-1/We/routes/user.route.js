@@ -35,12 +35,14 @@ userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
   // console.log(email, password);
   try {
-    const user = await userModel.findOne();
+    const user = await userModel.findOne({email});
     console.log(user);
     
     if (!user) {
       return res.status(400).json({ message: "user not found" });
     }
+
+    // Compare the password using bcrypt
     if (user) {
       bcrypt.compare(password, user.password, function (err, result) {
         if (err) {
@@ -49,6 +51,7 @@ userRouter.post("/login", async (req, res) => {
             .json({ message: "error occured during hashing of password" });
         }
         if (result) {
+           // Generate a JWT token
           const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY);
           return res
             .status(201)
