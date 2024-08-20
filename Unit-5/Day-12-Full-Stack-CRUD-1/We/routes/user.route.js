@@ -36,7 +36,6 @@ userRouter.post("/login", async (req, res) => {
   // console.log(email, password);
   try {
     const user = await userModel.findOne({email});
-    console.log(user);
     
     if (!user) {
       return res.status(400).json({ message: "user not found" });
@@ -50,6 +49,8 @@ userRouter.post("/login", async (req, res) => {
             .status(500) 
             .json({ message: "error occured during hashing of password" });
         }
+
+        
         if (result) {
            // Generate a JWT token
           const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY);

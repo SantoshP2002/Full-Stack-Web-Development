@@ -15,7 +15,7 @@ app.use(cors({origin : "*"}))
  
 app.use(express.json());
 app.use("/user", userRouter);
-app.use("/note",auth, noteRouter);
+app.use("/note",auth,  noteRouter);
 
 
 app.get("/", (req, res) => {
