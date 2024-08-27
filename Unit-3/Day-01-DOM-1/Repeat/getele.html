@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      My name is Santosh
+      <div class="item" id="ele1" date-id="1">Item 1</div>
+      <div class="item" date-id="2">Item 2</div>
+      <div class="item" date-id="3">Item 3</div>
+      <div class="item" date-id="4">Item 4</div>
+      <div class="item" date-id="5">Item 5</div>
+      <div class="item" date-id="6">Item 6</div>
+      <div class="item" date-id="7">Item 7</div>
+    </div>
+  </body>
+  <script>
+    // getElementById
+    let ele1 = document.getElementById("container");
+    console.log(ele1);
+
+    // getElementsByClassName
+    let ele2 = document.getElementsByClassName("item");
+    console.log(ele2); 
+
+    // getElementsByTagName
+    let ele3 = document.getElementsByTagName("div");
+    console.log(ele3);
+
+    // getElementById
+    // getElementsByClassName
+    // getElementsByTagName
+    // querySelector :=>
+    const ele4 = document.querySelectorAll(".item");
+    console.log(ele4);
+   
+  </script>
+</html>
